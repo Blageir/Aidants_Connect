@@ -289,13 +289,16 @@ class AutorisationModelTests(TestCase):
         )
 
 
-@tag("models")
+@tag("models", "organisation", "datapass")
 class OrganisationModelTests(TestCase):
     def test_create_and_retrieve_organisation(self):
         OrganisationFactory(
             name="Girard S.A.R.L",
             siret="123",
             address="3 rue du chat, 27120 Houlbec-Cocherel",
+            contact_name="Stella Manos",
+            contact_email="stella.manos@girard.fr",
+            status="prospect",
         )
         self.assertEqual(Organisation.objects.count(), 1)
         organisation = Organisation.objects.all()[0]
