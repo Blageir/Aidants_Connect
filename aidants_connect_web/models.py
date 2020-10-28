@@ -264,10 +264,7 @@ class AutorisationDureeKeywords(models.TextChoices):
 
 
 def get_staff_organisation_name_id() -> int:
-    try:
-        return Organisation.objects.get(name=settings.STAFF_ORGANISATION_NAME).pk
-    except Organisation.DoesNotExist:
-        return 1
+    return 1
 
 
 class MandatQuerySet(models.QuerySet):
