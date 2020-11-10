@@ -298,7 +298,7 @@ class OrganisationModelTests(TestCase):
             address="3 rue du chat, 27120 Houlbec-Cocherel",
             contact_name="Stella Manos",
             contact_email="stella.manos@girard.fr",
-            status="prospect",
+            datapass_id=5,
         )
         self.assertEqual(Organisation.objects.count(), 1)
         organisation = Organisation.objects.all()[0]

@@ -10,14 +10,8 @@ from django.utils.functional import cached_property
 
 
 class Organisation(models.Model):
-    PROSPECT = "prospect"
-    ONBOARDED = "onboarded"
-    STATUS_CHOICES = (
-        (PROSPECT, "Prospect"),
-        (ONBOARDED, "Organisation intégrée"),
-    )
     name = models.TextField("Nom", default="No name provided")
-    siret = models.PositiveIntegerField("N° SIRET", default=1)
+    siret = models.BigIntegerField("N° SIRET", default=1)
     address = models.TextField("Adresse", default="No address provided")
     contact_name = models.TextField(
         "Nom du contact", default="No contact name provided"
@@ -25,9 +19,7 @@ class Organisation(models.Model):
     contact_email = models.EmailField(
         "Email du contact", default="No contact email provided"
     )
-    status = models.CharField(
-        "Status", max_length=9, choices=STATUS_CHOICES, default=ONBOARDED,
-    )
+    datapass_id = models.IntegerField("ID de la demande Datapass", default=0)
 
     def __str__(self):
         return f"{self.name}"
