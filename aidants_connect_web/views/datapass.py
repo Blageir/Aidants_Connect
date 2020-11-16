@@ -55,7 +55,7 @@ def receiver(request):
             - {this_organisation.contact_email}
         """,
         from_email=settings.DATAPASS_FROM_EMAIL,
-        recipient_list=["to@example.com"],
+        recipient_list=[settings.DATAPASS_TO_EMAIL],
         fail_silently=False,
     )
 

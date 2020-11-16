@@ -62,7 +62,6 @@ class Datapass(TestCase):
 
             self.assertEqual(response.status_code, 400)
 
-    @tag("oi")
     def test_good_data_creates_email(self):
         self.client.post(
             "/datapass_receiver/",
